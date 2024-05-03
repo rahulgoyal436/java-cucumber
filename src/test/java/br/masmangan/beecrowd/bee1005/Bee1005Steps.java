@@ -11,42 +11,43 @@ import static org.junit.Assert.assertEquals;
 
 public class Bee1005Steps {
 
-    private String input;
-    private String actual;
+	private String input;
 
-    @Given("input is")
-    public void input_is(String input) {
-        this.input = input;
-    }
+	private String actual;
 
-    @When("program runs")
-    public void program_runs() throws IOException {
-        InputStream inputStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
+	@Given("input is")
+	public void input_is(String input) {
+		this.input = input;
+	}
 
-        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+	@When("program runs")
+	public void program_runs() throws IOException {
+		InputStream inputStream = new ByteArrayInputStream(input.getBytes(StandardCharsets.UTF_8));
 
-        PrintStream outputStream = new PrintStream(byteArrayOutputStream);
+		ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
 
-        PrintStream previousOut = System.out;
-        InputStream previousIn = System.in;
+		PrintStream outputStream = new PrintStream(byteArrayOutputStream);
 
-        System.setIn(inputStream);
-        System.setOut(outputStream);
+		PrintStream previousOut = System.out;
+		InputStream previousIn = System.in;
 
-        Main.main(null);
+		System.setIn(inputStream);
+		System.setOut(outputStream);
 
-        actual = byteArrayOutputStream.toString();
+		Main.main(null);
 
-        inputStream.close();
-        outputStream.close();
+		actual = byteArrayOutputStream.toString();
 
-        System.setOut(previousOut);
-        System.setIn(previousIn);
-    }
+		inputStream.close();
+		outputStream.close();
 
-    @Then("output should be")
-    public void output_should_be(String expected) {
-        assertEquals(expected, actual);
-    }
+		System.setOut(previousOut);
+		System.setIn(previousIn);
+	}
+
+	@Then("output should be")
+	public void output_should_be(String expected) {
+		assertEquals(expected, actual);
+	}
 
 }

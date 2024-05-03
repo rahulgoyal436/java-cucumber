@@ -29,26 +29,30 @@ import static org.junit.Assert.assertEquals;
 
 public class CircleSteps {
 
-    public static final double DELTA = 0.0001;
+	public static final double DELTA = 0.0001;
 
-    private final Circle c = new Circle();
-    private double actual;
+	private final Circle c = new Circle();
 
-    @Given("pi is {double}")
-    public void pi_is(double pi) {
-        assertEquals(pi, Circle.PI, DELTA);
-    }
-    @Given("radius is {double}")
-    public void radius_is(double radius) {
-        c.setRadius(radius);
-    }
-    @When("area is calculated")
-    public void area_is_calculated() {
-        actual = c.getArea();
-    }
-    @Then("result should be A={double}")
-    public void result_should_be_a(double a) {
-        assertEquals(a, actual, DELTA);
-    }
+	private double actual;
+
+	@Given("pi is {double}")
+	public void pi_is(double pi) {
+		assertEquals(pi, Circle.PI, DELTA);
+	}
+
+	@Given("radius is {double}")
+	public void radius_is(double radius) {
+		c.setRadius(radius);
+	}
+
+	@When("area is calculated")
+	public void area_is_calculated() {
+		actual = c.getArea();
+	}
+
+	@Then("result should be A={double}")
+	public void result_should_be_a(double a) {
+		assertEquals(a, actual, DELTA);
+	}
 
 }
