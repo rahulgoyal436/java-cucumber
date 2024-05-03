@@ -22,15 +22,16 @@ package br.masmangan.beecrowd.bee1002;
 
 public class Circle {
 
-    public static final double PI = 3.14159;
+	public static final double PI = 3.14159;
 
-    private double radius;
+	private double radius;
 
-    public void setRadius(double radius) {
-        this.radius = radius;
-    }
+	public void setRadius(double radius) {
+		this.radius = radius;
+	}
 
-    public double getArea() {
-        return PI * radius * radius;
-    }
+	public double getArea() {
+		return PI * radius * radius;
+	}
+
 }

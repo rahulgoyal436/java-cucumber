@@ -27,23 +27,23 @@ import static java.lang.System.out;
 
 public final class Main {
 
-    private Main() {
+	private Main() {
 
-    }
+	}
 
-    public static void main(String[] args) {
-        Circle c;
-        Scanner s;
+	public static void main(String[] args) {
+		Circle c;
+		Scanner s;
 
-        c = new Circle();
-        s = new Scanner(in);
+		c = new Circle();
+		s = new Scanner(in);
 
-        c.setRadius(s.nextDouble());
+		c.setRadius(s.nextDouble());
 
-        s.close();
+		s.close();
 
-        out.printf("A=%.4f%n", c.getArea());
+		out.printf("A=%.4f%n", c.getArea());
 
-    }
+	}
 
 }

@@ -6,23 +6,24 @@ import static java.lang.System.out;
 
 public class Main {
 
-    private Main() {
+	private Main() {
 
-    }
+	}
 
-    public static void main(String[] args) {
-        StudentGrade grade;
-        Scanner in;
+	public static void main(String[] args) {
+		StudentGrade grade;
+		Scanner in;
 
-        grade = new StudentGrade();
-        in = new Scanner(System.in);
+		grade = new StudentGrade();
+		in = new Scanner(System.in);
 
-        grade.setA(in.nextDouble());
-        grade.setB(in.nextDouble());
-        grade.setC(in.nextDouble());
+		grade.setA(in.nextDouble());
+		grade.setB(in.nextDouble());
+		grade.setC(in.nextDouble());
 
-        in.close();
+		in.close();
 
-        out.printf("MEDIA = %.1f%n", grade.getAverage());
-    }
+		out.printf("MEDIA = %.1f%n", grade.getAverage());
+	}
+
 }

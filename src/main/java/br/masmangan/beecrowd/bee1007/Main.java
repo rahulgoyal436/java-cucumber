@@ -6,24 +6,25 @@ import static java.lang.System.out;
 
 public class Main {
 
-    private Main() {
+	private Main() {
 
-    }
+	}
 
-    public static void main(String[] args) {
-        Product product;
-        Scanner in;
+	public static void main(String[] args) {
+		Product product;
+		Scanner in;
 
-        product = new Product();
-        in = new Scanner(System.in);
+		product = new Product();
+		in = new Scanner(System.in);
 
-        product.setA(in.nextInt());
-        product.setB(in.nextInt());
-        product.setC(in.nextInt());
-        product.setD(in.nextInt());
+		product.setA(in.nextInt());
+		product.setB(in.nextInt());
+		product.setC(in.nextInt());
+		product.setD(in.nextInt());
 
-        in.close();
+		in.close();
 
-        out.printf("DIFERENCA = %d%n", product.getDifference());
-    }
+		out.printf("DIFERENCA = %d%n", product.getDifference());
+	}
+
 }
